@@ -2,9 +2,10 @@ MVPs:
 - Add different clothing items
 - saving clothing items to a outfit
 - ??save outfit to a wardrobe?
+- search by brands(brand.id, brand.name)
 
 Database: (**bonus**)
-- Basic: Tops, bottoms, shoes
+- Basic: Tops, bottoms, shoes, image.best
     -** accessories, hats, top-outwear, top-shirt
 - Outfit: Contains 1 top, 1 bottom, 1 shoe
     -** interconnected outfits, or random outfits
@@ -12,8 +13,10 @@ Database: (**bonus**)
     - outfits tied to user 
 
 Bonus:
-- Favorite brands
+- Favorite brands   
 - Wish list
 - ** Things for sell**
 - ** random outfits
 - outfit carousel
+- recommend brands or items
+- trending outfits
