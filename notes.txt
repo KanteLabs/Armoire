@@ -1,0 +1,19 @@
+MVPs:
+- Add different clothing items
+- saving clothing items to a outfit
+- ??save outfit to a wardrobe?
+
+Database: (**bonus**)
+- Basic: Tops, bottoms, shoes
+    -** accessories, hats, top-outwear, top-shirt
+- Outfit: Contains 1 top, 1 bottom, 1 shoe
+    -** interconnected outfits, or random outfits
+- Users: Clothing items tied to Users
+    - outfits tied to user 
+
+Bonus:
+- Favorite brands
+- Wish list
+- ** Things for sell**
+- ** random outfits
+- outfit carousel
