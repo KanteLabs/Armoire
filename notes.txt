@@ -4,13 +4,21 @@ MVPs:
 - ??save outfit to a wardrobe?
 - search by brands(brand.id, brand.name)
 
+Routes: 
+- /outfits -> my outfits - login
+- /outfits/:id -> specific outfit - login
+- 
+
 Database: (**bonus**)
+- clothing: (name, brand.name, description, price, img, productId, unbrandedName, currency & price, image.best, **size**, userid)
+    -type(shoe, top, bottom)
 - Basic: Tops, bottoms, shoes, image.best
     -** accessories, hats, top-outwear, top-shirt
 - Outfit: Contains 1 top, 1 bottom, 1 shoe
     -** interconnected outfits, or random outfits
 - Users: Clothing items tied to Users
     - outfits tied to user 
+    - 
 
 Bonus:
 - Favorite brands   
@@ -20,3 +28,4 @@ Bonus:
 - outfit carousel
 - recommend brands or items
 - trending outfits
+- user size info in localstorage

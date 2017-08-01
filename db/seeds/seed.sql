@@ -1,4 +1,3 @@
 \c armoire
-\i tops.sql
-\i bottoms.sql
-\i shoes.sql
+\i clothes.sql
+\i outfits.sql 
