@@ -1,16 +1,16 @@
-const clothesController = {};
+const clothingController = {};
 
-clothesController.index = (req, res)=>{
+clothingController.index = (req, res)=>{
     res.json({
         message: 'Index page on clothes controller'
     })
 }
 
-clothesController.sendSearch = (req, res)=>{
-    res.json({
+clothingController.sendSearch = (req, res)=>{
+    res.render('index', {
         message: `${req.params.search} search results`,
         data: res.locals.productData
     })
 }
 
-module.exports = clothesController;
+module.exports = clothingController;

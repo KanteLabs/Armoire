@@ -3,7 +3,7 @@ function searchProductsAPI(e) {
   fetch(`/search/${e.target.search.value}`)
   .then(res => res.json())
   .then(jsonRes => {
-    console.log(jsonRes);
+    console.log('AJAX', jsonRes);
   })
 }
 

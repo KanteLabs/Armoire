@@ -41,16 +41,19 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   res.render('index', {
     message: 'App page!',
+    data: false
   })
 })
 
 // import our different routes
+const searchRoutes = require('./routes/search_routes');
+app.use('/search', searchRoutes);
 const clothesRoutes = require('./routes/clothes_routes');
-app.use('/search', clothesRoutes);
-// const authRoutes = require('./routes/auth-routes');
-// app.use('/auth', authRoutes);
-// const userRoutes = require('./routes/user-routes');
-// app.use('/user', userRoutes);
+app.use('/clothes', clothesRoutes);
+const authRoutes = require('./routes/auth_routes');
+app.use('/auth', authRoutes);
+const userRoutes = require('./routes/user_routes');
+app.use('/user', userRoutes);
 
 // Error handler!
 app.get('*', (req, res) => {

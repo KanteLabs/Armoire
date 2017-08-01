@@ -1,11 +1,11 @@
 const express = require('express');
-const clothesRouter = express.Router();
+const clothesRoutes = express.Router();
 
 const clothesController = require('../controllers/clothes_controller');
 const clothesHelper = require('../services/api/clothes_helper');
 
-clothesRouter.get('/', clothesController.index);
+clothesRoutes.get('/', clothesController.index);
 
-clothesRouter.get('/:search', clothesHelper.productSearchAPI, clothesController.sendSearch)
+clothesRoutes.get('/', clothesHelper.productSearchAPI, clothesController.sendSearch)
 
-module.exports = clothesRouter;
+module.exports = clothesRoutes;

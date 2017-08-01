@@ -7,11 +7,44 @@
   <title>Clothes</title>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href='/'>Home</a></li>
+      <li><a href='/clothes'>See all clothes</a></li>
+          <!--dropdown for /clothes/outfits  -->
+          <!--dropdown for /clothes/outfits/add  -->
+      <li><a href='/clothes/add'>Clothing Add</a></li>
+      <li><a href='/auth/login'>Login</a></li>
+      <li><a href='/auth/register'>Register</a></li>
+      <li><a href='/user'>Profile</a></li>
+      <li><a href='/auth/logout'>Logout</a></li>
+    </ul>
+  </nav>
     <h1><%=message%></h1>
-  <form id='request'>
+  <form action="/search" id='request'>
     <input type='text' name='search' placeholder='Search for something' />
     <input type='submit' value='Search' />
   </form>
- <script src='./src/main.js'></script> 
+  <% if(data) {%>
+    <div>
+      <ul>
+        <!-- <% for(var i = 0; i < 9; i++){ %>
+          <li><%= data.products[i].name %></li>
+        <%}%> -->
+        <% data.products.map((products)=>{ %>
+            <li id="<%= products.id%>">
+             <p> <%= products.name %> </p>
+              <p><%= products.brand.name %></p>
+              <p><%= products.description %></p>
+              <p><%= products.priceLabel %></p>
+              <p><%= products.brandedName %></p>
+              <img src="<%= products.image.sizes.Best.url%>" title="prodcuts.name" alt="products.brandedName" />
+              <p><%= products.categories.shortName %></p>
+            </li>
+        <% })%>
+      </ul>
+    </div>
+  <%}%>
+ <!-- <script src='./src/main.js'></script>  -->
 </body>
 </html>
