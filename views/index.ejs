@@ -35,7 +35,7 @@
             <li id="<%= products.id%>">
              <p> <%= products.name %> </p>
               <p><%= products.brand.name %></p>
-              <p><%= products.description %></p>
+              <p><%= products.description.split('<ul>')[0] %></p>
               <p><%= products.priceLabel %></p>
               <p><%= products.brandedName %></p>
               <img src="<%= products.image.sizes.Best.url%>" title="prodcuts.name" alt="products.brandedName" />
