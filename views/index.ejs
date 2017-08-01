@@ -38,8 +38,8 @@
               <p><%= products.description.split('<ul>')[0] %></p>
               <p><%= products.priceLabel %></p>
               <p><%= products.brandedName %></p>
-              <img src="<%= products.image.sizes.Best.url%>" title="prodcuts.name" alt="products.brandedName" />
-              <p><%= products.categories.shortName %></p>
+              <img src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" />
+              <p><%= products.categories[0].shortName %></p>
             </li>
         <% })%>
       </ul>
