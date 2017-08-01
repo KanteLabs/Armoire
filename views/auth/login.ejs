@@ -1,0 +1,11 @@
+<% include ../partials/boilerplate %>
+
+<div class='account_container'>
+  <form method='POST' action='/auth/login'>
+    <input name='username' type='text' placeholder='username' required />
+    <input name='password' type='password' placeholder='password' required />
+    <input type='submit' value='Log in!' />
+  </form>
+</div>
+
+<% include ../partials/end %>
