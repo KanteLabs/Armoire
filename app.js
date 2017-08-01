@@ -44,14 +44,6 @@ app.get('/', (req, res) => {
   })
 })
 
-// app.get('/search', (req, res)=>{
-//     let search = req.query.search
-//     res.json({
-//         message: 'search page',
-//         data: search
-//     })
-// })
-
 // import our different routes
 const clothesRoutes = require('./routes/clothes_routes');
 app.use('/search', clothesRoutes);

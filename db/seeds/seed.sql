@@ -1,3 +1,3 @@
 \c armoire
-\i clothes.sql
-\i outfits.sql 
+\i clothing.sql
+\i outfits.sql
