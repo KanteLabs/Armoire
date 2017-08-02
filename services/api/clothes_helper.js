@@ -6,7 +6,7 @@ const appKey = process.env.app_key;
 function productSearchAPI(req, res, next){
     console.log(`Searching for ${req.query.search}`);
     let search = req.query.search;
-    fetch(`http://api.shopstyle.com/api/v2/products?pid=${appKey}&fts=${search}&offset=0&limit=10`)
+    fetch(`http://api.shopstyle.com/api/v2/products?pid=${appKey}&fts=${search}&offset=0&limit=5`)
     .then(fetchRes=>fetchRes.json())
     .then((productsRes)=>{
         console.log(productsRes.products[0].name)

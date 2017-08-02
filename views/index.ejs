@@ -28,18 +28,20 @@
   <% if(data) {%>
     <div>
       <ul>
-        <!-- <% for(var i = 0; i < 9; i++){ %>
-          <li><%= data.products[i].name %></li>
-        <%}%> -->
         <% data.products.map((products)=>{ %>
-            <li id="<%= products.id%>">
+            <li class="productItem" id="<%= products.id%>">
+              <!-- <form> -->
              <p> <%= products.name %> </p>
-              <p><%= products.brand.name %></p>
+             <% if(products.brand) { %>
+                 <p><%= products.brand.name %></p>
+            <% } %>
               <p><%= products.description.split('<ul>')[0] %></p>
               <p><%= products.priceLabel %></p>
               <p><%= products.brandedName %></p>
               <img src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" />
               <p><%= products.categories[0].shortName %></p>
+              <!-- <input type="submit" value="Own it" /> -->
+              <!-- </form> -->
             </li>
         <% })%>
       </ul>
