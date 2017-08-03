@@ -31,10 +31,16 @@ clothingController.create = (req, res)=>{
         console.log(err)
         res.status(500).json(err)
     })
-    // res.render('index', {
-    //     message: `${req.params.search} search results`,
-    //     data: res.locals.productData
-    // })
+}
+
+clothingController.delete = (req, res) => {
+    Clothes.destroy(req.params.id)
+    .then(()=>{
+        res.redirect('/clothes')
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json(err)
+    })
 }
 
 module.exports = clothingController;

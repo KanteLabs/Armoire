@@ -20,34 +20,28 @@ const Clothes = {
         VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING *
       `, [product.name, product.brand, product.description, product.priceLabel, product.id, product.brandedName, product.imageBest, product.clothing_type, userid])
+    },
+    update: (product, id) => {
+      return db.one(`
+        UPDATE clothes SET
+        name = $1,
+        brand = $2 ,
+        description = $3 ,
+        price = $4 ,
+        productId = $5 ,
+        brandedName = $6 ,
+        imageBest = $7 ,
+        clothing_type = $8
+        WHERE id = $4
+        RETURNING *
+      `, [product.name, product.brand, product.description, product.priceLabel, product.id, product.brandedName, product.imageBest, product.clothing_type, id])
+    },
+    destroy: (id) => {
+      return db.none(`
+        DELETE FROM clothes
+        WHERE id = $1
+      `, [id])
     }
 }
-
-// Movie.create = (movie, userid) => {
-//   return db.one(`
-//     INSERT INTO movies
-//     (title, year, genre, user_id)
-//     VALUES ($1, $2, $3, $4)
-//     RETURNING *
-//   `, [movie.title, movie.year, movie.genre, userid]);
-// }
-
-// Movie.update = (movie, id) => {
-//   return db.one(`
-//     UPDATE movies SET
-//     title = $1,
-//     year = $2,
-//     genre = $3
-//     WHERE id = $4
-//     RETURNING *
-//   `, [movie.title, movie.year, movie.genre, id]);
-// }
-
-// Movie.destroy = (id) => {
-//   return db.none(`
-//     DELETE FROM movies
-//     WHERE id = $1
-//   `, [id]);
-// }
 
 module.exports = Clothes;

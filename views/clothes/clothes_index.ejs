@@ -2,7 +2,10 @@
 <h1><%= username %> clothes</h1>
 <div class="clothes_all">
     <% data.map((clothes)=>{ %>
-        <p> <%= clothes.name %>
+        <p> <%= clothes.name %> </p>
+        <form method='POST' action='/clothes/<%= clothes.id %>?_method=DELETE'>
+            <input type='submit' value='Delete it!' />
+        </form>
    <% }) %> 
 </div>
 

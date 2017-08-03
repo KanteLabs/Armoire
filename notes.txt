@@ -1,8 +1,8 @@
 MVPs:
-- Add different clothing items
+- Add different clothing items [x]
 - saving clothing items to a outfit
 - ??save outfit to a wardrobe?
-- search by brands(brand.id, brand.name)
+- search by brands(brand.id, brand.name) [x]
 
 Routes: 
 - /outfits -> my outfits - login
@@ -16,7 +16,7 @@ Database: (**bonus**)
     -** accessories, hats, top-outwear, top-shirt
 - Outfit: Contains 1 top, 1 bottom, 1 shoe
     -** interconnected outfits, or random outfits
-- Users: Clothing items tied to Users
+- Users: Clothing items tied to Users [x]
     - outfits tied to user 
     - 
 
