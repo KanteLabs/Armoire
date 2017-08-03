@@ -3,6 +3,7 @@
 <div class="clothes_all">
     <% data.map((clothes)=>{ %>
         <p> <%= clothes.name %> </p>
+        <a href="/clothes/<%= clothes.id %>"> View Item </a>
         <form method='POST' action='/clothes/<%= clothes.id %>?_method=DELETE'>
             <input type='submit' value='Delete it!' />
         </form>

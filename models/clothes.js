@@ -7,9 +7,15 @@ const Clothes = {
         WHERE userid = $1
         `,[userid])
     },
+    findById: (id)=>{
+      return db.oneOrNone(`
+        SELECT * FROM clothes
+        WHERE id = $1
+      `, [id])
+    },
     findByClothing_type: ()=>{
         return db.oneOrNone(`
-          SELECT * FROM clothing
+          SELECT * FROM clothes
           WHERE clothing_type = $1
         `,[clothing_type])
     },
@@ -19,7 +25,7 @@ const Clothes = {
         (name, brand, description, price, productId, brandedName, imageBest, clothing_type, userid)
         VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING *
-      `, [product.name, product.brand, product.description, product.priceLabel, product.id, product.brandedName, product.imageBest, product.clothing_type, userid])
+      `, [product.name, product.brand, product.description, product.price, product.productId, product.brandedName, product.imageBest, product.clothing_type, userid])
     },
     update: (product, id) => {
       return db.one(`

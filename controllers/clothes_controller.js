@@ -15,6 +15,19 @@ clothingController.index = (req, res)=>{
     })
 }
 
+clothingController.show = (req, res)=>{
+    Clothes.findById(req.params.id)
+    .then((clothes)=>{
+        res.render('clothes/clothing_single',{
+            message: 'ok',
+            data: clothes
+        })
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json(err)
+    })
+}
+
 clothingController.create = (req, res)=>{
     Clothes.create({
         name: req.body.name,

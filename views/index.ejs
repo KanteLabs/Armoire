@@ -50,7 +50,9 @@
                 <input name="brand" class="styledInput" type="text" value="<%= products.brand.name %>">
                 <% } %>
 
-                <textarea name="description" class="styledInput" readonly="readonly" type="text" value=""> <%= products.description.split('<ul>')[0] %> </textarea>  
+                <textarea name="description" style="display: none" readonly="readonly" type="text" value=""> <%= products.description.split('<ul>')[0] %> </textarea>
+                
+                <p> <%= products.description.split('<ul>')[0] %> </p>
 
                 <input name="price" class="styledInput" type="text" value="<%= products.priceLabel %>">  
 
