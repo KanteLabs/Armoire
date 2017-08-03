@@ -1,0 +1,8 @@
+textarea, input {
+    background: 0;
+    border: 0;
+    width: 100%;
+    overflow: visible;
+    outline: 0;
+    height: auto;
+}
