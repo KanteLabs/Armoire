@@ -14,4 +14,3 @@ CREATE TABLE IF NOT EXISTS clothes (
 
 -- SELECT * FROM clothing 
 -- WHERE clothing_type = 'shoe'
--- name, brand, description, price, productId, brandedName, imageBest, clothing_type, userid

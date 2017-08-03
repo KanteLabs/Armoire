@@ -3,12 +3,11 @@
 CREATE TABLE IF NOT EXISTS outfits (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  brand_name VARCHAR(255,
-  description VARCHAR,
-  image VARCHAR,
-  priceLabel VARCHAR,
-  clothing_type VARCHAR 
-);
+  top_id INTEGER REFERENCES clothes(id),
+  bottom_id INTEGER REFERENCES clothes(id),
+  shoe_id INTEGER REFERENCES clothes(id),
+  clout_points INTEGER
+)
 
 -- SELECT * FROM clothing 
 -- WHERE clothing_type = 'shoe'

@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
-  <title>Clothes</title>
+<% include partials/boilerplate %>
   <style>
-    .styledInput {
-    background: 0;
-    border: 0;
-    width: 100%;
-    overflow: visible;
-    outline: 0;
-    height: auto;
-    user-select: none;
+    .search{
+      
     }
-
     input[type="submit"]{
       cursor: pointer;
       user-select: none;
@@ -25,11 +12,8 @@
       top: 4px;
     }
   </style>
-</head>
-<body>
-  <% include ./partials/nav %>
   <form action="/search" id='request'>
-    <input type='text' name='search' placeholder='Search for something' />
+    <input class="search" type='text' name='search' placeholder='Search for something' />
     <input type='submit' value='Search' />
   </form>
   <% if(data) {%>
@@ -73,6 +57,4 @@
       </ul>
     </div>
   <%}%>
- <!-- <script src='./src/main.js'></script>  -->
-</body>
-</html>
+<% include partials/end %>

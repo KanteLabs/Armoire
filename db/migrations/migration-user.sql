@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS users (
   lastname VARCHAR(255)
 );
 
-ALTER TABLE clothes 
-ADD COLUMN userid INTEGER REFERENCES users(id);
+-- ALTER TABLE clothes 
+-- ADD COLUMN userid INTEGER REFERENCES users(id);
 
--- ALTER TABLE outfits
--- ADD COLUMN user_id INTEGER REFERENCES users(id);
+ALTER TABLE outfits
+ADD COLUMN userid INTEGER REFERENCES users(id);
