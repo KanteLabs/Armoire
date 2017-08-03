@@ -4,8 +4,9 @@
 
     <% data.map((outfit)=>{ %>
         <p><%= outfit.name %> </p>
-        <img src="<%= outfit.imagebest %>" />
-        <p> <%= outfit.description %> </p>
+        <a href="<%= outfit.outfitid %>"> <%= outfit.outfitname %> </a>
     <% }) %>
+
+
 
 <% include ../../partials/end %>

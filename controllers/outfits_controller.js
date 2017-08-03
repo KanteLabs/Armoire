@@ -28,18 +28,18 @@ outfitController.newFit = (req, res)=>{
     })
 }
 
-// clothingController.show = (req, res)=>{
-//     Clothes.findById(req.params.id)
-//     .then((clothes)=>{
-//         res.render('clothes/clothing_single',{
-//             message: 'ok',
-//             data: clothes
-//         })
-//     }).catch(err=>{
-//         console.log(err)
-//         res.status(500).json(err)
-//     })
-// }
+outfitController.show = (req, res)=>{
+    Outfits.findById(req.params.id)
+    .then((clothes)=>{
+        res.json({
+            message: 'ok',
+            data: clothes
+        })
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json(err)
+    })
+}
 
 outfitController.create = (req, res)=>{
     Outfits.create({

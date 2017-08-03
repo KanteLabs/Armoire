@@ -15,6 +15,7 @@ clothesRoutes.post('/clothes_add', authHelper.loginRequired, clothesController.c
 clothesRoutes.post('/outfits/add', authHelper.loginRequired, outfitsController.create)
 
 clothesRoutes.get('/:id', authHelper.loginRequired, clothesController.show)
+clothesRoutes.get('/outfits/:id', authHelper.loginRequired, outfitsController.show)
 
 clothesRoutes.get('/:id/edit', authHelper.loginRequired, clothesController.edit)
 

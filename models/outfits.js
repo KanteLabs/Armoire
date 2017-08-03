@@ -3,17 +3,18 @@ const db = require('../db/config');
 const Outfits = {
     findAll: (userid)=>{
         return db.query(`
-        select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.userid = $1 union all
-        select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.top_id WHERE o.userid = $1 union all
-        select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.userid = $1
+        select o.*,c.* , o.name as outfitName, o.id as outfitId from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.userid = $1 union all
+        select o.*,c.* , o.name as outfitName, o.id as outfitId from clothes c inner join outfits o on c.id = o.top_id WHERE o.userid = $1 union all
+        select o.*,c.* , o.name as outfitName, o.id as outfitId  from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.userid = $1
         `,[userid])
     },
-    // findById: (id)=>{
-    //   return db.oneOrNone(`
-    //     SELECT * FROM clothes
-    //     WHERE id = $1
-    //   `, [id])
-    // },
+    findById: (id)=>{
+      return db.query(`
+        select o.*,c.* , o.name as outfitName, o.id as outfitId from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.id = $1 union all
+        select o.*,c.* , o.name as outfitName, o.id as outfitId from clothes c inner join outfits o on c.id = o.top_id WHERE o.id = $1 union all
+        select o.*,c.* , o.name as outfitName, o.id as outfitId  from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.id = $1
+      `, [id])
+    },
     findByClothing_type: (clothing_type)=>{
         return db.oneOrNone(`
           SELECT * FROM clothes
