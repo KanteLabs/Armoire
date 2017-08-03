@@ -1,8 +1,11 @@
 const db = require('../db/config');
 
 const Clothes = {
-    findAll: ()=>{
-        return db.query('SELECT * FROM clothing')
+    findAll: (userid)=>{
+        return db.query(`
+        SELECT * FROM clothes
+        WHERE userid = $1
+        `,[userid])
     },
     findByClothing_type: ()=>{
         return db.oneOrNone(`
@@ -10,13 +13,13 @@ const Clothes = {
           WHERE clothing_type = $1
         `,[clothing_type])
     },
-    create: ()=>{
+    create: (product, userid)=>{
       return db.one(`
-        INSERT into clothing
+        INSERT into clothes
         (name, brand, description, price, productId, brandedName, imageBest, clothing_type, userid)
-        VALUES($1, $2, $3, $4, $5, $6, $7, $8)
+        VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING *
-      `, [product.name, product.brand.name, product.description, product.priceLabel, product.id, product.brandedName, product.image.sizes.best, product.categories.shortName, userid])
+      `, [product.name, product.brand, product.description, product.priceLabel, product.id, product.brandedName, product.imageBest, product.clothing_type, userid])
     }
 }
 

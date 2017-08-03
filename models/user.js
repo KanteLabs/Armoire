@@ -21,14 +21,14 @@ User.create = user => {
 User.findUserOutfits = id => {
   return db.manyOrNone(`
     SELECT * FROM outfits
-    WHERE user_id = $1
+    WHERE userid = $1
   `, [id]);
 };
 
 User.findUserClothing = id => {
   return db.manyOrNone(`
-    SELECT * FROM clothing
-    WHERE user_id = $1
+    SELECT * FROM clothes
+    WHERE userid = $1
   `, [id]);
 };
 

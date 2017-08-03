@@ -10,7 +10,7 @@ usersController.index = (req, res) => {
         res.json({
         user: req.user,
         data: 'Put a user profile on this route',
-        clothing: clothing,
+        clothes: clothes,
       });
     }).catch(err => {
       console.log(err);
