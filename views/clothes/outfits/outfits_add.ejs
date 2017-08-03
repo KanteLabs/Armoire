@@ -1,5 +1,22 @@
 <% include ../../partials/boilerplate %>
+<% console.log(data) %>
 
-
+<form method="post" action="add"> 
+    <input name="name" type="text" placeholder="Outfit Name" />
+    <input name="clout_points" type="number" placeholder="Clout Points" />
+        <% for(let i = 0; i < data.length; i++){ %>
+            <% if(data[i].clothing_type === 'Tees'){ %>
+                <p><%= data[i].name %></p>
+                <input name="top_id" class="styledInput" type="radio" value="<%= data[i].id %>">
+            <% } else if (data[i].clothing_type === 'pants') {%>
+                <p><%= data[i].name %> </p>
+                <input name="bottom_id" class="styledInput" type="radio" value="<%= data[i].id %>">
+            <% } else if (data[i].clothing_type === 'Sneakers') {%>
+                <p><%= data[i].name %> </p>
+                <input name="shoe_id" class="styledInput" type="radio" value="<%= data[i].id %>">
+            <% } %>
+        <% } %>
+        <input type="submit" value="New Fit" />
+</form>
 
 <% include ../../partials/end %>

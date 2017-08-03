@@ -19,8 +19,7 @@ outfitController.index = (req, res)=>{
 outfitController.newFit = (req, res)=>{
     Clothes.findByClothing_type('Tees','pants','Sneakers')
     .then((clothes)=>{
-        res.json({
-            message: 'ok',
+        res.render('clothes/outfits/outfits_add',{
             data: clothes
         })
     }).catch(err=>{
@@ -42,23 +41,20 @@ outfitController.newFit = (req, res)=>{
 //     })
 // }
 
-// clothingController.create = (req, res)=>{
-//     Clothes.create({
-//         name: req.body.name,
-//         brand: req.body.brand,
-//         description: req.body.description,
-//         price: req.body.price,
-//         productId: req.body.productId,
-//         brandedName: req.body.brandedName,
-//         imageBest: req.body.imageBest,
-//         clothing_type: req.body.clothing_type
-//     },req.user.id).then(()=>{
-//         res.redirect('/clothes')
-//     }).catch(err=>{
-//         console.log(err)
-//         res.status(500).json(err)
-//     })
-// }
+outfitController.create = (req, res)=>{
+    Outfits.create({
+        name: req.body.name,
+        top_id: req.body.top_id,
+        bottom_id: req.body.bottom_id,
+        shoe_id: req.body.shoe_id,
+        clout_points: req.body.clout_points
+    },req.user.id).then(()=>{
+        res.redirect('/clothes/outfits')
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json(err)
+    })
+}
 
 // clothingController.update = (req, res)=>{
 //     Clothes.update({

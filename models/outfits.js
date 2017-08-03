@@ -20,14 +20,14 @@ const Outfits = {
           WHERE clothing_type = $1
         `,[clothing_type])
     },
-    // create: (product, userid)=>{
-    //   return db.one(`
-    //     INSERT into clothes
-    //     (name, brand, description, price, productId, brandedName, imageBest, clothing_type, userid)
-    //     VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
-    //     RETURNING *
-    //   `, [product.name, product.brand, product.description, product.price, product.productId, product.brandedName, product.imageBest, product.clothing_type, userid])
-    // },
+    create: (outfit, userid)=>{
+      return db.one(`
+        INSERT into outfits
+        (name, top_id, bottom_id, shoe_id, clout_points, userid)
+        VALUES($1, $2, $3, $4, $5, $6)
+        RETURNING *
+      `, [outfit.name, outfit.top_id, outfit.bottom_id,outfit.shoe_id, outfit.clout_points, userid])
+    },
     // update: (product, id) => {
     //   return db.one(`
     //     UPDATE clothes SET

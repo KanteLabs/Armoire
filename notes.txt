@@ -39,9 +39,9 @@ select o.*,c.* from clothes c inner join outfits o on c.id = o.top_id union all
 select o.*,c.* from clothes c inner join outfits o on c.id = o.shoe_id
 
 
-select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.userid = $1 union all
-select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.top_id WHERE o.userid = $1 union all
-select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.userid = $1
+select o.*,c.* from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.userid = 1 union all
+select o.*,c.* from clothes c inner join outfits o on c.id = o.top_id WHERE o.userid = 1 union all
+select o.*,c.* from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.userid = 1 AND ORDER BY o.id ASC
 
 
 select c.description from clothes c inner join outfits o on c.id = o.bottom_id union all
