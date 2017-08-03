@@ -4,6 +4,7 @@
     <% data.map((clothes)=>{ %>
         <p> <%= clothes.name %> </p>
         <a href="/clothes/<%= clothes.id %>"> View Item </a>
+        <a href='/clothes/<%= clothes.id %>/edit'>Edit it!</a>
         <form method='POST' action='/clothes/<%= clothes.id %>?_method=DELETE'>
             <input type='submit' value='Delete it!' />
         </form>

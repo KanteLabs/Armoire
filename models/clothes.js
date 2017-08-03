@@ -38,9 +38,9 @@ const Clothes = {
         brandedName = $6 ,
         imageBest = $7 ,
         clothing_type = $8
-        WHERE id = $4
+        WHERE id = $9
         RETURNING *
-      `, [product.name, product.brand, product.description, product.priceLabel, product.id, product.brandedName, product.imageBest, product.clothing_type, id])
+      `, [product.name, product.brand, product.description, product.price, product.productId, product.brandedName, product.imageBest, product.clothing_type, id])
     },
     destroy: (id) => {
       return db.none(`
