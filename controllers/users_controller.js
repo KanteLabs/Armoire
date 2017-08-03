@@ -6,11 +6,10 @@ const usersController = {};
 usersController.index = (req, res) => {
   console.log('userController');
   User.findUserClothing(req.user.id)
-    .then(clothing => {
-        res.json({
+    .then(clothes => {
+        res.render('user',{
         user: req.user,
-        data: 'Put a user profile on this route',
-        clothes: clothes,
+        data: clothes,
       });
     }).catch(err => {
       console.log(err);

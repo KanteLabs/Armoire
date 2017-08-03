@@ -1,9 +1,9 @@
-<% include ../partials/boilderplate %>
-
+<% include ../partials/boilerplate %>
+<h1><%= username %> clothes</h1>
 <div class="clothes_all">
-    <% for(let product of products) { %>
-        <li><% product.description %></li>
-   <% } %>
+    <% data.map((clothes)=>{ %>
+        <p> <%= clothes.name %>
+   <% }) %> 
 </div>
 
 <% include ../partials/end %>

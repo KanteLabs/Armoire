@@ -5,8 +5,8 @@ const clothingController = {};
 clothingController.index = (req, res)=>{
     Clothes.findAll(req.user.id)
     .then((clothes)=>{
-        res.json({
-            message: 'ok',
+        res.render('clothes/clothes_index',{
+            username: req.user.username,
             data: clothes
         })
     }).catch(err=>{
