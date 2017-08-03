@@ -8,6 +8,7 @@ const authHelper = require('../services/auth/auth_helpers');
 
 clothesRoutes.get('/', authHelper.loginRequired, clothesController.index);
 clothesRoutes.get('/outfits', authHelper.loginRequired, outfitsController.index)
+clothesRoutes.get('/outfits/outfits_add', authHelper.loginRequired, outfitsController.newFit)
 clothesRoutes.post('/clothes_add', authHelper.loginRequired, clothesController.create)
 
 clothesRoutes.get('/:id', authHelper.loginRequired, clothesController.show)

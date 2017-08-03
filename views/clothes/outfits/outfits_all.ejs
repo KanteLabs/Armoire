@@ -1,12 +1,16 @@
 <% include ../../partials/boilerplate %>
+<% console.log(data) %>
     <h1> <%= username %> outfits </h1>
-    <% console.log(data) %>
-    <h1><%= data.name %> </h1>
-<img src="<%= data.imagebest %>" />
-<p> <%= data.brand %> </p>
-<p> <%= data.description %> </p>
-<p> <%= data.price %> </p>
-<p> <%= data.productid %> </p>
-<p> <%= data.brandename %> </p>
-<p> <%= data.clothing_type %> </p>
+
+    <% data.map((outfit)=>{ %>
+        <p><%= outfit.name %> </p>
+        <img src="<%= outfit.imagebest %>" />
+        <p> <%= outfit.brand %> </p>
+        <p> <%= outfit.description %> </p>
+        <p> <%= outfit.price %> </p>
+        <p> <%= outfit.productid %> </p>
+        <p> <%= outfit.brandename %> </p>
+        <p> <%= outfit.clothing_type %> </p>
+    <% }) %>
+
 <% include ../../partials/end %>

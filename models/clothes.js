@@ -13,11 +13,15 @@ const Clothes = {
         WHERE id = $1
       `, [id])
     },
-    findByClothing_type: ()=>{
-        return db.oneOrNone(`
+    findByClothing_type: (clothing_type1, clothing_type2,clothing_type3)=>{
+        return db.query(`
           SELECT * FROM clothes
-          WHERE clothing_type = $1
-        `,[clothing_type])
+          WHERE clothing_type = $1 UNION ALL
+          SELECT * FROM clothes
+          WHERE clothing_type = $2 UNION ALL
+          SELECT * FROM clothes
+          WHERE clothing_type= $3
+        `,[clothing_type1, clothing_type2, clothing_type3])
     },
     create: (product, userid)=>{
       return db.one(`

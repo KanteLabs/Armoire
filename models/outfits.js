@@ -3,8 +3,8 @@ const db = require('../db/config');
 const Outfits = {
     findAll: (userid)=>{
         return db.query(`
-        select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.userid = $1 union all 
-        select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.top_id WHERE o.userid = $1 union all 
+        select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.userid = $1 union all
+        select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.top_id WHERE o.userid = $1 union all
         select o.*,c.* , o.name as outfitName from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.userid = $1
         `,[userid])
     },
@@ -14,12 +14,12 @@ const Outfits = {
     //     WHERE id = $1
     //   `, [id])
     // },
-    // findByClothing_type: ()=>{
-    //     return db.oneOrNone(`
-    //       SELECT * FROM clothes
-    //       WHERE clothing_type = $1
-    //     `,[clothing_type])
-    // },
+    findByClothing_type: (clothing_type)=>{
+        return db.oneOrNone(`
+          SELECT * FROM clothes
+          WHERE clothing_type = $1
+        `,[clothing_type])
+    },
     // create: (product, userid)=>{
     //   return db.one(`
     //     INSERT into clothes

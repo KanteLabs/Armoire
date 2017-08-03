@@ -6,11 +6,23 @@ const outfitController = {};
 outfitController.index = (req, res)=>{
     Outfits.findAll(req.user.id)
     .then((outfits)=>{
-        res.json({
+        res.render('clothes/outfits/outfits_all',{
             username: req.user.username,
             data: outfits
         })
-        console.log(outfits)
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json(err)
+    })
+}
+
+outfitController.newFit = (req, res)=>{
+    Clothes.findByClothing_type('Tees','pants','Sneakers')
+    .then((clothes)=>{
+        res.json({
+            message: 'ok',
+            data: clothes
+        })
     }).catch(err=>{
         console.log(err)
         res.status(500).json(err)
