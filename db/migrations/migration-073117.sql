@@ -1,4 +1,4 @@
-\c armoire
+-- \c armoire
 
 CREATE TABLE IF NOT EXISTS outfits (
   id SERIAL PRIMARY KEY,
@@ -9,5 +9,3 @@ CREATE TABLE IF NOT EXISTS outfits (
   clout_points INTEGER
 )
 
--- SELECT * FROM clothing 
--- WHERE clothing_type = 'shoe'

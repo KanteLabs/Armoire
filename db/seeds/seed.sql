@@ -1,3 +1,3 @@
-\c armoire
--- \i clothing.sql
+-- \c armoire
+\i clothing.sql
 \i outfits.sql

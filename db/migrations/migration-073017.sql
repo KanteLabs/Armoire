@@ -1,4 +1,4 @@
-\c armoire
+-- \c armoire
 
 CREATE TABLE IF NOT EXISTS clothes (
   id SERIAL PRIMARY KEY,
@@ -11,6 +11,3 @@ CREATE TABLE IF NOT EXISTS clothes (
   imageBest VARCHAR,
   clothing_type VARCHAR 
 );
-
--- SELECT * FROM clothing 
--- WHERE clothing_type = 'shoe'
