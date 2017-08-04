@@ -28,9 +28,9 @@
                 <input name="imageBest" class="styledInput" type="text" value="<%= products.image.sizes.Best.url %>" style="display:none">           
                 <input name="clothing_type" class="styledInput" type="text" value="<%= products.categories[0].shortName %>"> 
 
+                <img src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" />
                 <input class="styledInput" type="submit" value="Flex" />
             </form>  
-                <img src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" />
             </li>
         <% })%>
       </ul>

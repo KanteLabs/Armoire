@@ -1,4 +1,4 @@
-h1.searchResults, nav{
+h1.searchResults, nav, form[action="/clothes/clothes_add"]{
     font-family: 'Poppins', sans-serif;
 }
 nav > a {
@@ -20,7 +20,7 @@ nav ul li >a {
 }
 form#request {
     display: flex;
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
 }
 .search{background: floralwhite;padding: 1em 0.5em;color: black;text-align: center;}
 input[value="Search"] {
@@ -38,12 +38,13 @@ input[type="submit"]:active{
 position: relative;
 top: 4px;
 }
-h1.searchResults {
+h1.searchResults, h1.pageHeader {
     text-transform: capitalize;
     text-align: center;
     letter-spacing: 2px;
     font-weight: lighter;
     margin-bottom: 2em;
+    margin-top: 2em;
 }
 textarea, input {
     background: 0;
@@ -73,7 +74,10 @@ nav ul li {
 div ul {
 
 }
-
+form[action="/clothes/clothes_add"] *{
+    font-weight: 100;
+    user-select: none;
+}
 .productItem {
     display: flex;
     margin: 0 auto;
@@ -86,30 +90,29 @@ div ul {
 
 .productItem img {
     width: 300px;
+    display: flex;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-top: 1em;
 }
 
-input[value='Flex']{background: rgba(85, 107, 47, 0.8);width: auto;font-weight: bold;letter-spacing: 2px;text-transform: uppercase;text-align: center;padding: 1em 1em;border-radius: 8px;color: rgb(255, 255, 255);box-shadow: 0px 4px darkolivegreen;margin-bottom: 1em;font-size: 15px;}
+input[value='Flex']{background: rgba(85, 107, 47, 0.8);width: auto;font-weight: bold;letter-spacing: 2px;text-transform: uppercase;text-align: center;padding: 1em 1em;border-radius: 8px;color: rgb(255, 255, 255);box-shadow: 0px 4px darkolivegreen;font-size: 15px;display: flex;margin: 0 auto;margin-bottom: 1em;margin-top: 1em;}
 
 input[name="name"] {
     text-align: center;
     font-size: 2em;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: clip;
     overflow: hidden;
+    margin: 0.5em 0em;
+    padding: 0em 0.2em;
 }
 
-input[name="brand"]{
-}
+input[name="brand"]{text-align: center;margin: -2em 0em 1em 0em;}
 
-.productItem form p {
+.productItem form p {line-height: 170%;text-align: justify;padding: 0em 1em;word-spacing: 3px;}
 
-}
+input[name="price"]{margin-top: 1em;text-align: center;}
 
-input[name="price"]{
-
-}
-
-input[name="clothing_type"]{
-
-}
+input[name="clothing_type"]{text-align: center;}
 
