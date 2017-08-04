@@ -1,15 +1,15 @@
 <% include ../partials/boilerplate %>
 <% console.log(data) %>
-<form method='POST' action='/clothes/<%= data.id %>?_method=PUT'>
+<form method='POST' action='/clothes/<%= data.id %>?_method=PUT' class="edit_info">
   <input name='name' type='text' value='<%= data.name %>' />
   <input name='brand' type='text' value='<%= data.brand %>' />
-  <textarea name='description' type='text' value=''> <%= data.description %> </textarea>
+  <textarea name='description' type='text' value='' style="height: 202px"> <%= data.description %> </textarea>
   <input name='price' type='text' value='<%= data.price %>' />
   <input style="display: none" name='productId' type='text' value='<%= data.productid %>' />
-  <input name='brandedname' type='text' value='<%= data.brandedName %>' />
+  <input name='brandedname' type='text' value='<%= data.brandedName %>' style="display: none;"/>
   <input style="display: none" name='imageBest' type='text' value='<%= data.imagebest %>' />
   <input name='clothing_type' type='text' value='<%= data.clothing_type %>' />
-  <input type='submit' value='Edit it!' />
+  <input type='submit' value='Swool' class="edit"/>
 </form>
  
 <% include ../partials/end %>
