@@ -7,10 +7,7 @@ usersController.index = (req, res) => {
   console.log('userController');
   User.findUserClothing(req.user.id)
     .then(clothes => {
-        res.render('user',{
-        user: req.user,
-        data: clothes,
-      });
+        res.redirect('/clothes');
     }).catch(err => {
       console.log(err);
       res.status(500).json({err: err});
@@ -29,7 +26,7 @@ usersController.create = (req, res) => {
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
-      res.redirect('/user');
+      res.redirect('/clothes');
     });
   }).catch(err => {
     console.log(err);
