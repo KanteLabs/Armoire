@@ -1,7 +1,6 @@
 MVPs:
 - Add different clothing items [x]
-- saving clothing items to a outfit
-- ??save outfit to a wardrobe?
+- saving clothing items to a outfit [x]
 - search by brands(brand.id, brand.name) [x]
 
 Routes: 

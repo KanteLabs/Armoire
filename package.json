@@ -28,8 +28,7 @@
     "morgan": "^1.8.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "pg-promise": "^6.3.5",
-    "pug": "^2.0.0-rc.2"
+    "pg-promise": "^6.3.5"
   },
   "bugs": {
     "url": "https://github.com/KanteLabs/Armoire/issues"
