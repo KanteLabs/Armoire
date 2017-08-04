@@ -1,0 +1,21 @@
+<% include ../../partials/boilerplate %>
+    <% console.log(data) %>
+    <h1> <%= data[0].outfitname %> Outfit </h1>
+    <h1> <%= data[0].clout_points %> Clout Points </h1>
+
+    <div class="outfit">
+        <ul>
+            <% data.map((clothing)=>{ %>
+                <li>
+                    <h1> <%= clothing.name %> </h1>
+                    <img src="<%=clothing.imagebest%>"/>
+                </li>            
+           <% }) %>
+            <a href='/clothes/outfits/<%= data[0].outfitid %>/edit'>Edit it!</a>
+            <form method='POST' action='/clothes/outfits/<%= data[0].outfitid %>?_method=DELETE'>
+            <input type='submit' value='Delete' />
+            </form>
+        </ul>
+    </div>
+
+<% include ../../partials/end %>

@@ -1,12 +1,14 @@
 <% include ../../partials/boilerplate %>
-<% console.log(data) %>
+
     <h1> <%= username %> outfits </h1>
 
-    <% data.map((outfit)=>{ %>
-        <p><%= outfit.name %> </p>
-        <a href="<%= outfit.outfitid %>"> <%= outfit.outfitname %> </a>
-    <% }) %>
-
-
+    <% for(let i = 0; i <(data.length)/3; i++) { %>
+        <p><%= data[i].outfitname %> outfit has <%= data[i].clout_points %> clout points</p>
+        <a href="/clothes/outfits/<%= data[i].outfitid %>">View <%= data[i].outfitname %> </a>
+        <a href='/clothes/outfits/<%= data[0].outfitid%>/edit'>Edit it!</a>
+        <form method='POST' action='/clothes/outfits/<%= data[i].outfitid %>?_method=DELETE'>
+            <input type='submit' value='Delete Outfit' />
+        </form>
+    <% } %>
 
 <% include ../../partials/end %>
