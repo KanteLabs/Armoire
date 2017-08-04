@@ -1,8 +1,115 @@
+h1.searchResults, nav{
+    font-family: 'Poppins', sans-serif;
+}
+nav > a {
+    align-self: center;
+}
+nav > a:hover {
+    text-decoration: none;
+}
+.logo {
+    font-family: 'Pacifico', cursive;
+    align-self: center;
+    font-size: 1.3em;
+    position: relative;
+    left: -0.5em;
+    color: white;
+}
+nav ul li >a {
+    background: white;
+}
+form#request {
+    display: flex;
+    margin-bottom: 2em;
+}
+.search{background: floralwhite;padding: 1em 0.5em;color: black;text-align: center;}
+input[value="Search"] {
+    padding: 1em;
+    background: mediumseagreen;
+    width: 100px;
+    cursor: pointer;
+}
+
+input[type="submit"]{
+cursor: pointer;
+user-select: none;
+}
+input[type="submit"]:active{
+position: relative;
+top: 4px;
+}
+h1.searchResults {
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    margin-bottom: 2em;
+}
 textarea, input {
     background: 0;
     border: 0;
     width: 100%;
-    overflow: visible;
+    overflow: hidden;
     outline: 0;
     height: auto;
 }
+
+nav {display: flex;justify-content: space-between;background: salmon;padding: 1em;}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+/* Styling for search results  */
+
+div ul {
+
+}
+
+.productItem {
+    display: flex;
+    margin: 0 auto;
+    width: 90vw;
+    flex-flow: column wrap;
+    background: salmon;
+    border: 1px solid black;
+    margin-bottom: 1em;
+}
+
+.productItem img {
+    width: 300px;
+}
+
+input[value='Flex']{background: rgba(85, 107, 47, 0.8);width: auto;font-weight: bold;letter-spacing: 2px;text-transform: uppercase;text-align: center;padding: 1em 1em;border-radius: 8px;color: rgb(255, 255, 255);box-shadow: 0px 4px darkolivegreen;margin-bottom: 1em;font-size: 15px;}
+
+input[name="name"] {
+    text-align: center;
+    font-size: 2em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+input[name="brand"]{
+}
+
+.productItem form p {
+
+}
+
+input[name="price"]{
+
+}
+
+input[name="clothing_type"]{
+
+}
+

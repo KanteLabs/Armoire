@@ -1,13 +1,33 @@
   <nav>
+        <a href="/"><h1 class="logo">Armoire</h1> </a>
     <ul>
-      <li><a href='/'>Home</a></li>
-      <li><a href='/clothes'>See all clothes</a></li>
-          <!--dropdown for /clothes/outfits  -->
-          <!--dropdown for /clothes/outfits/add  -->
-      <li><a href="/clothes/outfits/">Outfits</a></li>
-      <li><a href="/clothes/outfits/outfits_add">Outfits Add</a></li>
-      <li><a href='/auth/login'>Login</a></li>
-      <li><a href='/auth/register'>Register</a></li>
-      <li><a href='/auth/logout'>Logout</a></li>
+      <li><a href='/' class="btn btn-default dropdown-toggle">Home</a></li>
+      <li>
+        <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Clothes
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="/clothes">View All Clothes</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="/clothes/outfits/">View All Outfits</a></li>
+          <li><a href="/clothes/outfits/outfits_add">Create An Outfit</a></li>
+        </ul>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Profile
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/auth/register">Register</a></li>
+          <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+        </div>
+      </li>
     </ul>
   </nav>
