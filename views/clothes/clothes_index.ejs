@@ -1,15 +1,17 @@
 <% include ../partials/boilerplate %>
 <h1 class="pageHeader"> clothes you own</h1>
-<div class="clothes_all">
+<ul class="clothes_all">
     <% data.map((clothes)=>{ %>
-        <p> <%= clothes.name %> </p>
+        <li>
+        <h1> <%= clothes.name %> </h1>
         <img src="<%= clothes.imagebest %>" title="<%= clothes.name %>" alt="<%= clothes.brandedName %>" />
         <a href="/clothes/<%= clothes.id %>"> View Item </a>
         <a href='/clothes/<%= clothes.id %>/edit'>Edit it!</a>
         <form method='POST' action='/clothes/<%= clothes.id %>?_method=DELETE'>
             <input type='submit' value='Delete' />
         </form>
+        </li>
    <% }) %> 
-</div>
+</ul>
 
 <% include ../partials/end %>

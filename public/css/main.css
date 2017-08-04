@@ -116,3 +116,20 @@ input[name="price"]{margin-top: 1em;text-align: center;}
 
 input[name="clothing_type"]{text-align: center;}
 
+
+/*  Clothes_index page */
+.clothes_all li h1 {
+    text-align: center;
+}
+
+.clothes_all li {
+    background: salmon;
+    border: 1px solid #bbb;
+    padding: 1em;
+}
+
+.clothes_all img {
+    width: 300px;
+    display: flex;
+    margin: 0 auto;
+}
