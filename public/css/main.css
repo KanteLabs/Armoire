@@ -1,4 +1,4 @@
-h1.searchResults, nav, form[action="/clothes/clothes_add"], h1.pageHeader, h1.searchResults{
+body{
     font-family: 'Poppins', sans-serif;
 }
 nav > a {
@@ -14,6 +14,7 @@ nav > a:hover {
     position: relative;
     left: -0.5em;
     color: white;
+    letter-spacing: 2px;
 }
 nav ul li >a {
     background: white;
@@ -133,6 +134,7 @@ input[name="clothing_type"]{text-align: center;}
     margin: 0 auto;
     border: 1px solid black;
     margin-bottom: 1em;
+    border-radius: 1em;
 }
 
 .clothes_all img {
@@ -140,17 +142,22 @@ input[name="clothing_type"]{text-align: center;}
     display: flex;
     margin: 0 auto;
     border: 1px solid black;
+    border-radius: 1.5em;
 }
 
-.clothes_all li a {
-    background: red;
+.edit, .view {
     padding: 1em;
     display: flex;
-    width: 100px;
+    width: 105px;
     margin: 0 auto;
     margin-top: 1em;
     text-decoration: none;
-    color: white;
+    justify-content: center;
+    background: rgba(127, 150, 255, 0.7);
+    text-transform: capitalize;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 4px #7F96FF;
 }
 
 input[value="Delete Item"]{
@@ -169,3 +176,19 @@ input[value="Delete Item"]{
     margin-bottom: 1em;
     margin-top: 1em;
 }
+
+/* clothes single  */
+.clothes_single {
+    width: 90vw;
+    background: salmon;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.clothes_single img {
+    width: 300px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.description{line-height: 170%;text-align: justify;padding: 0em 1em;word-spacing: 3px;}

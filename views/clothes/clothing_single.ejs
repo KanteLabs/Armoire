@@ -1,15 +1,18 @@
 <% include ../partials/boilerplate %>
 
-<h1><%= data.name %> </h1>
-<img src="<%= data.imagebest %>" />
-<p> <%= data.brand %> </p>
-<p> <%= data.description %> </p>
-<p> <%= data.price %> </p>
-<p> <%= data.productid %> </p>
-<p> <%= data.brandename %> </p>
-<p> <%= data.clothing_type %> </p>
-<a href='/clothes/<%= data.id %>/edit'>Edit it!</a>
-<form method='POST' action='/clothes/<%= data.id %>?_method=DELETE'>
-    <input type='submit' value='Delete' />
-</form>
+<h1 class="pageHeader"><%= data.name %> </h1>
+<div class="clothes_single">
+    <p> <%= data.brand %> </p>
+    <p class="description"> <%= data.description %> </p>
+    <p> <%= data.price %> </p>
+    <p> <%= data.productid %> </p>
+    <p> <%= data.brandename %> </p>
+    <p> <%= data.clothing_type %> </p>
+    <img src="<%= data.imagebest %>" />
+    <a class="edit" href='/clothes/<%= data.id %>/edit'>Edit it!</a>
+    <form method='POST' action='/clothes/<%= data.id %>?_method=DELETE'>
+        <input type='submit' value='Delete Item' />
+    </form>
+</div>
+
 <% include ../partials/end %>
