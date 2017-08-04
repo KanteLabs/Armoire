@@ -1,0 +1,316 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.3
+-- Dumped by pg_dump version 9.6.3
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: clothes; Type: TABLE; Schema: public; Owner: student_32
+--
+
+CREATE TABLE clothes (
+    id integer NOT NULL,
+    name character varying(255),
+    brand character varying(255),
+    description character varying,
+    price character varying,
+    productid character varying,
+    brandedname character varying,
+    imagebest character varying,
+    clothing_type character varying,
+    userid integer
+);
+
+
+ALTER TABLE clothes OWNER TO student_32;
+
+--
+-- Name: clothes_id_seq; Type: SEQUENCE; Schema: public; Owner: student_32
+--
+
+CREATE SEQUENCE clothes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE clothes_id_seq OWNER TO student_32;
+
+--
+-- Name: clothes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: student_32
+--
+
+ALTER SEQUENCE clothes_id_seq OWNED BY clothes.id;
+
+
+--
+-- Name: outfits; Type: TABLE; Schema: public; Owner: student_32
+--
+
+CREATE TABLE outfits (
+    id integer NOT NULL,
+    name character varying(255),
+    top_id integer,
+    bottom_id integer,
+    shoe_id integer,
+    clout_points integer,
+    userid integer
+);
+
+
+ALTER TABLE outfits OWNER TO student_32;
+
+--
+-- Name: outfits_id_seq; Type: SEQUENCE; Schema: public; Owner: student_32
+--
+
+CREATE SEQUENCE outfits_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE outfits_id_seq OWNER TO student_32;
+
+--
+-- Name: outfits_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: student_32
+--
+
+ALTER SEQUENCE outfits_id_seq OWNED BY outfits.id;
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: student_32
+--
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    username character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    password_digest text NOT NULL,
+    firstname character varying(255),
+    lastname character varying(255)
+);
+
+
+ALTER TABLE users OWNER TO student_32;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: student_32
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE users_id_seq OWNER TO student_32;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: student_32
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: clothes id; Type: DEFAULT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY clothes ALTER COLUMN id SET DEFAULT nextval('clothes_id_seq'::regclass);
+
+
+--
+-- Name: outfits id; Type: DEFAULT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY outfits ALTER COLUMN id SET DEFAULT nextval('outfits_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Data for Name: clothes; Type: TABLE DATA; Schema: public; Owner: student_32
+--
+
+COPY clothes (id, name, brand, description, price, productid, brandedname, imagebest, clothing_type, userid) FROM stdin;
+17	Cav Empt Printed Cotton-Jersey T-Shirt	\N	 Japanese brand Cav Empt %27s prints are almost as enigmatic as its elusive graphic designer founder%2C Sk8thing. This boxy cotton-jersey T-shirt depicts a dynamic scene with a woman%27s hands%2C credit card and moonlit building on the front and back. Note the %27CE%27 symbol included in the collage - it stands for the label%27s initials and is a coy reference to the European conformity marking. Shown here with Cav Empt trousers%2C Converse sneakers%2C Peyote Bird bracelet. - - Black and white cotton-jersey - Ribbed crew neck- 100%25 cotton- Machine wash- Made in Japan 	$95	648733245	Cav Empt Printed Cotton-Jersey T-Shirt	https://img.shopstyle-cdn.com/pim/29/a4/29a42d0c0000e8b52cf3843beb942d63_best.jpg	Tees	1
+15	Gucci - Ace Watersnake-trimmed Embroidered Leather Sneakers - White	Gucci	 First launched for Pre-Fall %252716%252C Gucci%2527s %2527Ace%2527 sneakers have earned a cult following with Alessandra Ambrosio and Chiara Ferragni both fans. Reworked for the new season%252C this white leather pair is paneled with heritage webbed stripes and mismatched metallic watersnake at the heel. We particularly like the embroidered gold bumble bees - one of the many animal motifs Alessandro Michele has introduced during his reign. 	$595				Sneakers	1
+18	Comme des Garçons PLAY Women's Chuck Taylor 1970s Low-Top Sneakers	Comme des Garcons	 Comme des Gar%C3%A7ons PLAY x Converse%27s cream canvas Chuck Taylor 1970s low-top sneakers are accented with a tonal rubber toe cap. The brand%27s signature heart-and-eyes patch is designed by New York artist Filip Pagowski. A collaboration between Converse and Comme des Gar%C3%A7ons PLAY. 1.5%22%2F40mm midsole %28approximately%29. Rubber toe cap. Signature heart-and-eyes patch at quarter panel. Black webbed trim at counter. Raised logo at glossed midsole. Off-white flat laces. Brushed silvertone grommets. Lace-up style. Lined. Vulcanized rubber sole. Available in Milk %28cream%29. Imported. 	$125	486867853	Comme des Garcons Women's Chuck Taylor 1970s Low-Top Sneakers	https://img.shopstyle-cdn.com/pim/1f/f2/1ff2d87949c6b79affd408df668977d5_best.jpg	Sneakers	1
+19	Comme des Garçons PLAY Men's Polka Dot Long-Sleeve T-shirt	Comme des Garcons	 CDG Play black cotton jersey long-sleeve T-shirt printed with white polka dots and appliqu%C3%A9d with the house%27s signature playful heart. Available in Black%2FWhite Cotton Hand wash Made in Japan Our model is 6%271%22%2F185cm and is wearing a size Medium. 	$168	459870922	Comme des Garcons Men's Polka Dot Long-Sleeve T-shirt	https://img.shopstyle-cdn.com/pim/24/07/24078869a37f5b48caf12c751ad135bb_best.jpg	Tees	1
+21	Yeezy x Adidas 350 V2 Boost Sneakers	\N	 Men%27s black primeknit Yeezy x Adidas Boost 350 V2 low-top sneakers with beige logo intarsia at sides%2C semi-translucent ribbed rubber outsoles%2C Boost-Tech soles and lace-up closures at uppers. Includes box. 	$895	655903451	Yeezy x Adidas 350 V2 Boost Sneakers	https://img.shopstyle-cdn.com/pim/b2/a6/b2a6be02e65adef77e0b226798dad4e0_best.jpg	Sneakers	1
+16	Men's Topman Ripped Stretch Skinny Jeans	Topman	   Tire blowouts are one thing but blowouts on the knees of these bad boy skinnies get you down the road to your next tour stop in style.  Available in stores.   	$85	618141037	\N	https://img.shopstyle-cdn.com/pim/d1/9b/d19bd01cf78f52dc82d1e7129a7e7224_best.jpg	pants	1
+20	Balmain Corduroy Skinny Pants	Balmain	    Black Balmain corduroy low-rise skinny pants with seven pockets%2525252C exposed zipper accents at ankles and concealed zip closure at center front.    	$180	629537666	\N	https://img.shopstyle-cdn.com/pim/c0/88/c088ea91731942f5f0156d6c8d41b013_best.jpg	pants	1
+22	Sylvie leather mini bag	Gucci	 The Sylvie mini bag in a top handle shape with nylon Web embedded under the fabric and decorated with a gold chain and buckle. The metal buckle closure was taken from the House%E2%80%99s archives%2C and is mixed playfully with the Web stripe. Made in a smooth%2C firm leather.  	$2,250	626869080	Gucci Sylvie leather mini bag	https://img.shopstyle-cdn.com/pim/eb/71/eb71d1f0f9ecb91c2b2112986e5f8b66_best.jpg	Bags	2
+25	Gucci Signature slide sandal	Gucci	  A Gucci Signature slide sandal. Made in heat debossed Gucci Signature leather resulting in a defined print with a firm texture.   	$295	608322012	\N	https://img.shopstyle-cdn.com/pim/55/ec/55ecf48d5f9c80dfd5d0988bcc28abec_best.jpg	Sneakers	1
+24	Versace Logo-Band Boxer Briefs	Versace	  A classic solid is updated with signature logo detail and designed with an elasticized waist for a secure fit and feel. Elasticized waistband. Cotton%252Felastane. Hand wash. Imported.  	$125	603454021	\N	https://img.shopstyle-cdn.com/pim/db/20/db20059104089487164997696c808b61_best.jpg	pants	1
+28	Saint Laurent Clout Sunglasses	Saint Laurent	  Oversized oval frame inspired by Californian culture.53mm lens width%253B 22mm bridge width%253B 145mm temple length.100%2525 UV protection. Acetate. Made in Italy.  	$350	518901888	\N	https://img.shopstyle-cdn.com/pim/b6/fd/b6fd8b995a88cb78a7de4731ab9dd93b_best.jpg	Tees	1
+\.
+
+
+--
+-- Name: clothes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: student_32
+--
+
+SELECT pg_catalog.setval('clothes_id_seq', 28, true);
+
+
+--
+-- Data for Name: outfits; Type: TABLE DATA; Schema: public; Owner: student_32
+--
+
+COPY outfits (id, name, top_id, bottom_id, shoe_id, clout_points, userid) FROM stdin;
+11	Ultimate Clout Flex	28	24	25	2000000	1
+\.
+
+
+--
+-- Name: outfits_id_seq; Type: SEQUENCE SET; Schema: public; Owner: student_32
+--
+
+SELECT pg_catalog.setval('outfits_id_seq', 11, true);
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: student_32
+--
+
+COPY users (id, username, email, password_digest, firstname, lastname) FROM stdin;
+1	clout	clout@gmail.com	$2a$10$Ude65KrljQHYtfaIAYhM4u8HLGDsJCfmrri6vstxG3deIfJxC/Jl.	clout	clout
+2	clout2	clout2@me.com	$2a$10$FfqmbNq3Gh7JRd0naoPnauhsSn8z1sdomUz/ehniWyOYSqyA9gzkq	clout2	clout2
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: student_32
+--
+
+SELECT pg_catalog.setval('users_id_seq', 2, true);
+
+
+--
+-- Name: clothes clothes_pkey; Type: CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY clothes
+    ADD CONSTRAINT clothes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: outfits outfits_pkey; Type: CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY outfits
+    ADD CONSTRAINT outfits_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users users_email_key; Type: CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_email_key UNIQUE (email);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users users_username_key; Type: CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_username_key UNIQUE (username);
+
+
+--
+-- Name: clothes clothes_userid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY clothes
+    ADD CONSTRAINT clothes_userid_fkey FOREIGN KEY (userid) REFERENCES users(id);
+
+
+--
+-- Name: outfits outfits_bottom_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY outfits
+    ADD CONSTRAINT outfits_bottom_id_fkey FOREIGN KEY (bottom_id) REFERENCES clothes(id);
+
+
+--
+-- Name: outfits outfits_shoe_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY outfits
+    ADD CONSTRAINT outfits_shoe_id_fkey FOREIGN KEY (shoe_id) REFERENCES clothes(id);
+
+
+--
+-- Name: outfits outfits_top_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY outfits
+    ADD CONSTRAINT outfits_top_id_fkey FOREIGN KEY (top_id) REFERENCES clothes(id);
+
+
+--
+-- Name: outfits outfits_userid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: student_32
+--
+
+ALTER TABLE ONLY outfits
+    ADD CONSTRAINT outfits_userid_fkey FOREIGN KEY (userid) REFERENCES users(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
