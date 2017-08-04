@@ -1,4 +1,4 @@
-h1.searchResults, nav, form[action="/clothes/clothes_add"]{
+h1.searchResults, nav, form[action="/clothes/clothes_add"], h1.pageHeader, h1.searchResults{
     font-family: 'Poppins', sans-serif;
 }
 nav > a {
@@ -43,8 +43,9 @@ h1.searchResults, h1.pageHeader {
     text-align: center;
     letter-spacing: 2px;
     font-weight: lighter;
-    margin-bottom: 2em;
-    margin-top: 2em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    font-size: 1.5em;
 }
 textarea, input {
     background: 0;
@@ -120,16 +121,51 @@ input[name="clothing_type"]{text-align: center;}
 /*  Clothes_index page */
 .clothes_all li h1 {
     text-align: center;
+    padding: 1em 0.5em;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    letter-spacing: 2px;
 }
 
 .clothes_all li {
     background: salmon;
-    border: 1px solid #bbb;
-    padding: 1em;
+    width: 90vw;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-bottom: 1em;
 }
 
 .clothes_all img {
     width: 300px;
     display: flex;
     margin: 0 auto;
+    border: 1px solid black;
+}
+
+.clothes_all li a {
+    background: red;
+    padding: 1em;
+    display: flex;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+input[value="Delete Item"]{
+    background: rgba(107, 47, 47, 0.8);
+    width: auto;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 1em 1em;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 4px #6b2f2f;
+    font-size: 15px;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
