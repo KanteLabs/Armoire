@@ -1,37 +1,50 @@
 <% include partials/boilerplate %>
-  <form action="/search" id='request'>
+  <form action="/search" id='request' class="navbar-fixed-top">
     <input class="search" type='text' name='search' placeholder='Search for something' />
     <input type='submit' value='Search' id="searchButton"/>
   </form>
   <% if(data) {%>
     <% if(data.metadata.freeTextSearches) { %>
-      <h1 class="searchResults"><%= data.metadata.freeTextSearches[0]%> Search Results</h1>
+      <h1 class="searchResults" style="margin-top: 6em"><%= data.metadata.freeTextSearches[0]%> Search Results</h1>
     <% } %>
     <% if(data.metadata.filters) { %>
-      <h1 class="searchResults"><%= data.metadata.filters[0].name%> Search Results</h1>
+      <h1 class="searchResults" style="margin-top: 6em"><%= data.metadata.filters[0].name%> Search Results</h1>
     <% } %>
     <div>
       <ul>
         <% data.products.map((products)=>{ %>
-            <li class="productItem" id="<%= products.id%>">
-            <form method="post" action="/clothes/clothes_add"> 
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail" id="<%= products.id%>">
+                <form method="post" action="/clothes/clothes_add">
 
-                <input name="name" class="styledInput" type="text" value="<%= products.name %>">
+                  <!-- Form elements, hidden for UI/UX purposes  -->
+                <input name="name" class="styledInput" type="text" value="<%= products.name %>" style="display: none">
                 <% if(products.brand) { %>
-                <input name="brand" class="styledInput" type="text" value="<%= products.brand.name %>">
+                <input name="brand" class="styledInput" type="text" value="<%= products.brand.name %>" style="display: none">
                 <% } %>
-                <textarea name="description" style="display: none" readonly="readonly" type="text" value=""> <%= products.description.split('<ul>')[0] %> </textarea>
-                <p> <%= products.description.split('<ul>')[0] %> </p>
-                <input name="price" class="styledInput" type="text" value="<%= products.priceLabel %>">  
-                <input name="productId" style="display: none" type="text" value="<%= products.id %>">  
+                <textarea name="description" style="display: none" readonly="readonly" type="text" value="" style="display: none"> <%= products.description.split('<ul>')[0] %> </textarea>
+                <p style="display: none"> <%= products.description.split('<ul>')[0] %> </p>
+                <input name="price" class="styledInput" type="text" value="<%= products.priceLabel %>" style="display: none">  
+                <input name="productId" style="display: none" type="text" value="<%= products.id %>" style="display: none">  
                 <input name="brandedName" class="styledInput" type="text" value="<%= products.brandedName %>" style="display: none">  
                 <input name="imageBest" class="styledInput" type="text" value="<%= products.image.sizes.Best.url %>" style="display:none">           
-                <input name="clothing_type" class="styledInput" type="text" value="<%= products.categories[0].shortName %>"> 
+                <input name="clothing_type" class="styledInput" type="text" value="<%= products.categories[0].shortName %>" style="display: none"> 
 
-                <img src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" />
-                <input class="styledInput" type="submit" value="Flex" />
-            </form>  
-            </li>
+                <img class="img-responsive" src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" / style="display: none">
+
+                  <h3><%= products.name %></h3>
+                  <img class-"img-responsive" src="<%= products.image.sizes.Best.url %>" alt="...">
+                  <div class="caption">
+                    <p><%= products.brandedName %></p>
+                    <p><%= products.description.split('<ul>')[0] %></p>
+                    <p><%= products.priceLabel %></p>
+                    <p><input class="styledInput" type="submit" value="Flex" /></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         <% })%>
       </ul>
     </div>

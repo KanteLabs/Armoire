@@ -21,7 +21,7 @@ nav ul li >a {
 }
 form#request {
     display: flex;
-    /* margin-bottom: 2em; */
+    margin-top: 4em;
 }
 .search{background: floralwhite;padding: 1em 0.5em;color: black;text-align: center;}
 input[value="Search"] {
@@ -57,7 +57,7 @@ textarea, input {
     height: auto;
 }
 
-nav {display: flex;justify-content: space-between;background: salmon;padding: 1em;}
+nav {display: flex;justify-content: space-between;background: salmon;padding: 1em;z-index: 99999 !important;}
 
 nav ul {
     display: flex;
@@ -80,6 +80,11 @@ form[action="/clothes/clothes_add"] *{
     font-weight: 100;
     user-select: none;
 }
+.thumbnail {
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
 .productItem {
     display: flex;
     margin: 0 auto;
@@ -90,8 +95,8 @@ form[action="/clothes/clothes_add"] *{
     margin-bottom: 1em;
 }
 
-.productItem img {
-    width: 300px;
+form[action="/clothes/clothes_add"] img {
+    width: 100%;
     display: flex;
     margin: 0 auto;
     border: 1px solid black;
