@@ -1,14 +1,19 @@
 <% include ../../partials/boilerplate %>
 
-    <h1 style="margin-top: 5em"> <%= username %> outfits </h1>
+    <h1 class="pageHeader"> <%= username %> outfits </h1>
 
+    <ul class="list-group">
     <% for(let i = 0; i <(data.length)/3; i++) { %>
-        <p><%= data[i].outfitname %> outfit has <span class="badge"><%= data[i].clout_points %></span> clout points</p>
-        <a href="/clothes/outfits/<%= data[i].outfitid %>">View <%= data[i].outfitname %> </a>
-        <a href='/clothes/outfits/<%= data[0].outfitid%>/edit'>Edit it!</a>
+        <li class="list-group-item">
+            <span class="badge"><a href='/clothes/outfits/<%= data[0].outfitid%>/edit'>Edit</a></span>
+            <span class="badge"><a href="/clothes/outfits/<%= data[i].outfitid %>">View</a></span>
+            <span class="badge"><%= data[i].clout_points %> clout points</span>
+        <p><%= data[i].outfitname %> outfit</p>
         <form method='POST' action='/clothes/outfits/<%= data[i].outfitid %>?_method=DELETE'>
             <input type='submit' value='Delete Outfit' />
         </form>
+        </li>
     <% } %>
+    </ul>
 
 <% include ../../partials/end %>

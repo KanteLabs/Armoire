@@ -155,25 +155,6 @@
         color: black;
     }
 
-    /* input[name="name"] {
-        text-align: center;
-        font-size: 2em;
-        white-space: nowrap;
-        text-overflow: clip;
-        overflow: hidden;
-        margin: 0.5em 0em;
-        padding: 0em 0.2em;
-    }
-
-    input[name="brand"]{text-align: center;margin: -2em 0em 1em 0em;}
-
-    .productItem form p {line-height: 170%;text-align: justify;padding: 0em 1em;word-spacing: 3px;}
-
-    input[name="price"]{margin-top: 1em;text-align: center;}
-
-    input[name="clothing_type"]{text-align: center;} */
-
-
     /*  Clothes_index page */
     .caption div {
         display: flex;
@@ -223,37 +204,61 @@
         margin-top: 1em;
     }
 
-    /* clothes single  */
-    .clothes_single {
-        width: 90vw;
-        background: salmon;
-        margin: 0 auto;
-        padding: 1em;
-        margin-bottom: 2em;
-    }
-
     .description{line-height: 170%;text-align: justify !important;padding: 0em 1em;}
-
-    .clothes_single p:nth-child(1) {
-        text-align: center;
-        font-size: 2em;
-        margin-bottom: 0.5em;
-    }
-
-    .clothes_single p:nth-child(3), .clothes_single p:nth-child(4) {
-        text-align: center;
-        padding: 0.5em;
-    }
 
     /* clothing edit css  */
 
     .edit_info{
-        padding: 1em;
+        padding: 2em;
+        margin-top: 4em;
+    }
+    .edit_info textarea{
+        background: lightgrey;
+        margin-bottom: 1em;
     }
     .edit_info input:not(:last-child){
         background: lightgrey;
         border: 1px solid #bbb;
         height: auto;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    input[value="Swool"]{
+        margin: 0 auto;
+        display: flex;
+        margin-top: 1em;
+    }
+
+    /* outfit all  */
+    span.badge {color: white;border-radius: 0;text-transform: capitalize;padding: 1em;line-height: 0;}
+
+    span.badge
+    a {
+        color: white;
+    }
+    ul.list-group {
+    padding: 1em;
+    }
+    li.list-group-item {
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+    .list-group-item p {
+    text-transform: capitalize;
+    }
+    input[value="Delete Outfit"]{
+        background: rgba(107, 47, 47, 0.8);
+        /* width: auto; */
+        letter-spacing: 2px;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 1em;
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 4px #6b2f2f;
+        margin-bottom: 1em;
+        margin-top: 2em;
+        display: flex;
+        justify-content: center;
     }
  } 
 @media(min-width: 601px){
