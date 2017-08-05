@@ -52,6 +52,7 @@
         margin-bottom: 1.5em;
         margin-top: 3.5em;
         font-size: 1.5em;
+        padding: 0em 0.5em;
     }
     textarea, input {
         background: 0;
@@ -176,6 +177,7 @@
     /*  Clothes_index page */
     .caption div {
         display: flex;
+        margin-top: 1em;
     }
 
     .edit, .view {

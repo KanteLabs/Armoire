@@ -1,16 +1,26 @@
 <% include ../partials/boilerplate %>
 
 <h1 class="pageHeader"><%= data.name %> </h1>
-<div class="clothes_single">
-    <p> <%= data.brand %> </p>
-    <p class="description"> <%= data.description %> </p>
-    <p> Price: <%= data.price %> </p>
-    <p> Product ID: <%= data.productid %> </p>
-    <img src="<%= data.imagebest %>" />
-    <a class="edit" href='/clothes/<%= data.id %>/edit'>Edit it!</a>
-    <form method='POST' action='/clothes/<%= data.id %>?_method=DELETE'>
-        <input type='submit' value='Delete Item' />
-    </form>
-</div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <h3><%= data.brand %></h3>
+                <div class="searchImgHolder">
+                <img class-"img-responsive" src="<%= data.imagebest %>" alt="<%= data.name %>" title="<%= data.name %>">
+                </div>
+                <div class="caption">
+                <p><%= data.brandedName %></p><br>
+                <p class="description"><%= data.description %></p><br>
+                <p>Price: <%= data.price %></p>
+                <p>Product: <%= data.productid %></p>
+                <div>
+                    <a class="edit" href='/clothes/<%= data.id %>/edit'>Edit Item</a>
+                </div>
+                <form method='POST' action='/clothes/<%= data.id %>?_method=DELETE'>
+                    <input type='submit' value='Delete Item' />
+                </form>
+                </div>
+        </div>
+    </div>
 
 <% include ../partials/end %>
