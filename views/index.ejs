@@ -1,7 +1,7 @@
 <% include partials/boilerplate %>
   <form action="/search" id='request' class="navbar-fixed-top">
     <input class="search" type='text' name='search' placeholder='Search for something' />
-    <input type='submit' value='Search' id="searchButton"/>
+    <input type='submit' value='Search' id="searchButton" class="btn-primary"/>
   </form>
   <% if(data) {%>
     <% if(data.metadata.freeTextSearches) { %>
@@ -12,8 +12,8 @@
     <% } %>
     <div>
       <ul>
-        <% data.products.map((products)=>{ %>
           <div class="row">
+        <% data.products.map((products)=>{ %>
             <div class="col-sm-6 col-md-4">
               <div class="thumbnail" id="<%= products.id%>">
                 <form method="post" action="/clothes/clothes_add">
@@ -34,18 +34,20 @@
                 <img class="img-responsive" src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" / style="display: none">
 
                   <h3><%= products.name %></h3>
-                  <img class-"img-responsive" src="<%= products.image.sizes.Best.url %>" alt="...">
+                  <div class="searchImgHolder">
+                    <img class-"img-responsive" src="<%= products.image.sizes.Best.url %>" alt="<%= products.name %>" title="<%= products.name %>">
+                  </div>
                   <div class="caption">
-                    <p><%= products.brandedName %></p>
-                    <p><%= products.description.split('<ul>')[0] %></p>
+                    <p><%= products.brandedName %></p><br>
+                    <p class="description"><%= products.description.split('<ul>')[0] %></p><br>
                     <p><%= products.priceLabel %></p>
-                    <p><input class="styledInput" type="submit" value="Flex" /></p>
+                    <p><input class="btn btn-primary" type="submit" value="Flex" /></p>
                   </div>
                 </form>
               </div>
             </div>
-          </div>
         <% })%>
+          </div>
       </ul>
     </div>
   <%}%>

@@ -1,17 +1,30 @@
 <% include ../partials/boilerplate %>
 <h1 class="pageHeader"> clothes you own</h1>
-<ul class="clothes_all">
+
+<div class="row">
     <% data.map((clothes)=>{ %>
-        <li>
-        <h1> <%= clothes.name %> </h1>
-        <img src="<%= clothes.imagebest %>" title="<%= clothes.name %>" alt="<%= clothes.brandedName %>" />
-        <a class="view" href="/clothes/<%= clothes.id %>"> View Item </a>
-        <a class="edit" href='/clothes/<%= clothes.id %>/edit'>Edit Item</a>
-        <form method='POST' action='/clothes/<%= clothes.id %>?_method=DELETE'>
-            <input type='submit' value='Delete Item' />
-        </form>
-        </li>
-   <% }) %> 
-</ul>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <h3><%= clothes.name %></h3>
+                <div class="searchImgHolder">
+                <img class-"img-responsive" src="<%= clothes.imagebest %>" alt="<%= clothes.name %>" title="<%= clothes.name %>">
+                </div>
+                <div class="caption">
+                <p><%= clothes.brandedName %></p><br>
+                <p class="description"><%= clothes.description.split('<ul>')[0] %></p><br>
+                <p><%= clothes.priceLabel %></p>
+                <div>
+                    <a class="view" href="/clothes/<%= clothes.id %>"> View Item </a>
+                    <a class="edit" href='/clothes/<%= clothes.id %>/edit'>Edit Item</a>
+                </div>
+                <form method='POST' action='/clothes/<%= clothes.id %>?_method=DELETE'>
+                    <input type='submit' value='Delete Item' />
+                </form>
+                </div>
+        </div>
+    </div>
+    <% }) %> 
+</div>
+
 
 <% include ../partials/end %>
