@@ -4,8 +4,8 @@ MVPs:
 - search by brands(brand.id, brand.name) [x]
 
 Routes: 
-- /outfits -> my outfits - login
-- /outfits/:id -> specific outfit - login
+- /outfits -> my outfits - login [x]
+- /outfits/:id -> specific outfit - login [x]
 - 
 
 Database: (**bonus**)
@@ -27,49 +27,10 @@ Bonus:
 - outfit carousel
 - recommend brands or items
 - trending outfits
-- user size info in localstorage
 
 
-
-select o.*,c.* from clothes c inner join outfits o on c.id = o.bottom_id union all
-
-select o.*,c.* from clothes c inner join outfits o on c.id = o.top_id union all
-
-select o.*,c.* from clothes c inner join outfits o on c.id = o.shoe_id
 
 
 select o.*,c.* from clothes c inner join outfits o on c.id = o.bottom_id WHERE o.userid = 1 union all
 select o.*,c.* from clothes c inner join outfits o on c.id = o.top_id WHERE o.userid = 1 union all
-select o.*,c.* from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.userid = 1 AND ORDER BY o.id ASC
-
-
-select c.description from clothes c inner join outfits o on c.id = o.bottom_id union all
-
-select c.description from clothes c inner join outfits o on c.id = o.top_id union all
-
-select  c.description from clothes c inner join outfits o on c.id = o.shoe_id;
-
-
-const options = {
-    query: (e) => {
-        console.log(e.query)
-    }
-}
-
-const pgp = require('pg-promise')(options)
-
-function setDatabase() {
-    if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-        return pgp({
-        database: 'armoire',
-        port: 5432,
-        host: 'localhost'
-    })
-    } else if (process.env.NODE_ENV === 'production') {
-        return pgp(process.env.DATABASE_URL)
-    }
-}
-
-const db = setDatabase()
-
-module.exports = db;
+select o.*,c.* from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.userid = 1 
