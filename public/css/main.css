@@ -1,26 +1,25 @@
-
-    body{
-        font-family: 'Poppins', sans-serif;
-        background: #EEF6F1;
-    }
-    nav > a {
-        align-self: center;
-    }
-    nav > a:hover {
-        text-decoration: none;
-    }
-    .logo {
-        font-family: 'Pacifico', cursive;
-        align-self: center;
-        font-size: 1.4em;
-        position: relative;
-        left: -0.5em;
-        color: white;
-        letter-spacing: 2px;
-    }
-    nav ul li >a {
-        background: white;
-    }
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #EEF6F1;
+}
+nav > a {
+    align-self: center;
+}
+nav > a:hover {
+    text-decoration: none;
+}
+.logo {
+    font-family: 'Pacifico', cursive;
+    align-self: center;
+    font-size: 1.4em;
+    position: relative;
+    left: -0.5em;
+    color: white;
+    letter-spacing: 2px;
+}
+nav ul li >a {
+    background: white;
+}
 
 @media (max-width: 600px){ 
     form#request {
@@ -111,6 +110,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-top: 0.5em;
     }
 
     .caption p {
@@ -317,7 +317,7 @@
  } 
 @media(min-width: 601px){
     .col-sm-6.col-md-4 {
-        width: 30vw;
+        width: 45%;
         height: 550px;
         margin: 0 auto;
         margin-bottom: 4em;
@@ -327,6 +327,7 @@
         display: flex;
         flex-flow: row wrap;
         margin: 0 auto;
+        padding: 0em 1em;
     }
     .searchImgHolder {
         width: 200px;
@@ -354,4 +355,296 @@
     .caption p {
         text-align: center;
     }
+    form#request {
+        display: flex;
+        margin-top: 4em;
+    }
+    .search{background: white;padding: 1em 0.5em;color: black;text-align: center;padding-left: 7em;}
+    input[value="Search"] {
+        padding: 1em;
+        /* background: #5a906c; */
+        width: 100px;
+        cursor: pointer;
+        color: white;
+    }
+
+    input[type="submit"]{
+    cursor: pointer;
+    user-select: none;
+    }
+    input[type="submit"]:active{
+    position: relative;
+    top: 4px;
+    }
+    h1.searchResults, h1.pageHeader {
+        text-transform: capitalize;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: lighter;
+        margin-bottom: 1.5em;
+        margin-top: 3.5em;
+        font-size: 1.5em;
+        padding: 0em 0.5em;
+    }
+    textarea, input {
+        background: 0;
+        border: 0;
+        width: 100%;
+        overflow: hidden;
+        outline: 0;
+        height: auto;
+    }
+
+    nav {display: flex;justify-content: space-between;background: #7F96FF;padding: 1em;z-index: 99999 !important;}
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+    }
+
+    nav ul li {
+        display: inline-block;
+        text-align: center;
+    }
+
+    /* Styling for search results  */
+
+    .searchImgHolder {
+        width: 100%;
+        height: 200px;
+        /* display: flex; */
+        margin: 0 auto;
+    }
+    p.description{
+        text-overflow: ellipsis;
+        white-space: pre-line;
+        overflow: scroll;
+        height: 100px;
+        width: 100%;
+    }
+
+     h3 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 1em;
+    }
+
+    .caption p {
+        text-align: center;
+    }
+    
+    .caption p:first-of-type{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    form[action="/clothes/clothes_add"] *{
+        font-weight: 100;
+        user-select: none;
+    }
+    .thumbnail {
+    padding-left: 1em;
+    padding-right: 1em;
+    }
+    .productItem {
+        display: flex;
+        margin: 0 auto;
+        width: 90vw;
+        flex-flow: column wrap;
+        background: salmon;
+        border: 1px solid black;
+        margin-bottom: 1em;
+    }
+
+    div.searchImgHolder img {
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        margin-top: 1em;
+    }
+
+    input[value='Flex']{width: auto;font-weight: bold;letter-spacing: 2px;text-transform: uppercase;text-align: center;padding: 0.9em;border-radius: 8px;color: rgb(255, 255, 255);box-shadow: 0px 4px #337ab7;display: flex;margin: 0 auto;margin-bottom: 1em;margin-top: 1em;}
+
+    input[value='Flex']:hover {
+        color: black;
+    }
+
+    /*  Clothes_index page */
+    .caption div {
+        display: flex;
+        margin-top: 1em;
+    }
+
+    .edit, .view {
+        padding: 1em;
+        width: auto;
+        text-decoration: none;
+        background: rgba(127, 150, 255, 0.7);
+        text-transform: uppercase;
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 4px #7F96FF;
+        flex: 1;
+        text-align: center;
+        margin-right: 0.5em;
+        position: relative;
+        left: 0.5em;
+    }
+
+    .edit:hover, .view:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    .edit:active, .view:active {
+        position: relative;
+        top: 4px;
+    }
+
+    input[value="Delete Item"]{
+        background: rgba(107, 47, 47, 0.8);
+        /* width: auto; */
+        letter-spacing: 2px;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 1em;
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 4px #6b2f2f;
+        font-size: 15px;
+        display: flex;
+        /* margin: 0 auto; */
+        margin-bottom: 1em;
+        margin-top: 1em;
+        justify-content: center;
+        position: relative;
+        left: 0.4em;
+    }
+
+    .description{line-height: 170%;text-align: justify !important;padding: 0em 1em;}
+
+    /* clothing edit css  */
+
+    .edit_info{
+        padding: 2em;
+        background: rgba(127, 150, 255, 0.5);
+        width: 70vw;
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0px 4px #7F96FF;
+    }
+    .edit_info textarea{
+        background: white;
+        margin-bottom: 1em;
+    }
+    .edit_info input:not(:last-child){
+        background: white;
+        border: 1px solid #bbb;
+        height: auto;
+        text-align: center;
+        margin-bottom: 1em;
+        padding: 1em 0em;
+    }
+    input[value="Swool"]{
+        margin: 0 auto;
+        display: flex;
+        margin-top: 1em;
+        width: 100%;
+        justify-content: center;
+        left: 0;
+    }
+
+    /* outfit all  */
+    span.badge {color: white;border-radius: 0;text-transform: capitalize;padding: 1em;line-height: 0;}
+
+    span.badge
+    a {
+        color: white;
+    }
+    ul.list-group {
+    padding: 1em 5em;
+    }
+    li.list-group-item {
+        padding: 1em;
+        width: 50vw;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+    .list-group-item p {
+    text-transform: capitalize;
+    }
+    input[value="Delete Outfit"]{
+        background: rgba(107, 47, 47, 0.8);
+        /* width: auto; */
+        letter-spacing: 2px;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 1em;
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 4px #6b2f2f;
+        /* margin: 0 auto; */
+        margin-bottom: 1em;
+        margin-top: 2em;
+        /* display: flex; */
+    }
+
+    /* oufit single  */
+    h2.subHeader {
+    text-align: center;
+    margin-top: -1em;
+    margin-bottom: 1em;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-style: italic;
+    }
+    img.outfitImg {
+    padding: 0em 1em;
+    margin-bottom: 3em;
+    margin-top: 1em;
+    }
+    /* outfit edit  */
+    h1.subHeader{
+        font-style: italic;
+    }
+    form#formPost{
+    /* background: white; */
+    padding: 2em;
+    width: 90vw;
+    margin: 0 auto;
+}
+    form#formPost input[name="name"], form#formPost input[name="clout_points"] {
+    background: white;
+    border: 1px solid #bbb;
+    height: auto;
+    text-align: center;
+    margin-bottom: 1em;
+    padding: 1em 0em;
+
+}
+    form input[type="radio"]{
+    width: auto;
+    flex: 1;
+}
+.outfitChoice {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.outfitChoice p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+    flex: 10;
+}
+#clothes_single {width: 100%;padding: 0em 15vw;}
 }
