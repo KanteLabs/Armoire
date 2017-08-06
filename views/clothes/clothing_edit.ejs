@@ -1,5 +1,10 @@
 <% include ../partials/boilerplate %>
 <% console.log(data) %>
+
+<h1 class="pageHeader">
+  Editing <%= data.name %>
+</h1>
+
 <form method='POST' action='/clothes/<%= data.id %>?_method=PUT' class="edit_info">
   <input name='name' type='text' value='<%= data.name %>' />
   <input name='brand' type='text' value='<%= data.brand %>' />
