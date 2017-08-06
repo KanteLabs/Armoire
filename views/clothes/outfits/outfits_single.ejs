@@ -1,21 +1,24 @@
 <% include ../../partials/boilerplate %>
     <% console.log(data) %>
-    <h1> <%= data[0].outfitname %> Outfit </h1>
-    <h1> <%= data[0].clout_points %> Clout Points </h1>
+    <h1 class="pageHeader"> <%= data[0].outfitname %> Outfit </h1>
+    <h2 class="subHeader">This outfit is worth <%= data[0].clout_points %> Clout Points </h2>
 
-    <div class="outfit">
-        <ul>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
             <% data.map((clothing)=>{ %>
-                <li>
-                    <h1> <%= clothing.name %> </h1>
-                    <img src="<%=clothing.imagebest%>"/>
-                </li>            
+                <h3> <%= clothing.name %> </h3>
+                <img class="outfitImg" src="<%=clothing.imagebest%>"/>         
            <% }) %>
-            <a href='/clothes/outfits/<%= data[0].outfitid %>/edit'>Edit it!</a>
+           <div class="caption">
+            <div>
+                <a class="edit" href='/clothes/outfits/'>Back</a>
+                <a class="edit" href='/clothes/outfits/<%= data[0].outfitid %>/edit'>Edit</a>
+            </div>
             <form method='POST' action='/clothes/outfits/<%= data[0].outfitid %>?_method=DELETE'>
-            <input type='submit' value='Delete' />
+                <input type='submit' value='Delete Item' />
             </form>
-        </ul>
+           </div>
+        </div>
     </div>
 
 <% include ../../partials/end %>

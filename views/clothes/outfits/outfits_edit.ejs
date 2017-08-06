@@ -1,5 +1,8 @@
 <% include ../../partials/boilerplate %>
 <% console.log(data) %>
+<h1 class="pageHeader">
+  Editing <%= data[0].outfitname %>
+</h1>
 <form method='POST' action='/clothes/outfits/<%= data[0].outfitid %>?_method=PUT'>
 
   <input name="name" type="text" placeholder="<%= data[0].outfitname %>" />
@@ -7,7 +10,7 @@
   <input name="bottom_id" type="number" value="<%= data[0].bottom_id %>" style="display: none"%>" />
   <input name="shoe_id" type="number" value="<%= data[0].shoe_id %>" style="display: none"%>" />
   <input name="clout_points" type="text" placeholder="<%= data[0].clout_points %>" />
-  <input type="submit" value="Swool">
+  <input type="submit" value="Swool" class="edit">
 </form>
  
 <% include ../../partials/end %>
