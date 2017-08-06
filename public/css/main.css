@@ -537,7 +537,7 @@ nav ul li >a {
     .edit_info{
         padding: 2em;
         background: rgba(127, 150, 255, 0.5);
-        width: 70vw;
+        width: 50vw;
         margin: 0 auto;
         border-radius: 8px;
         box-shadow: 0px 4px #7F96FF;
@@ -618,7 +618,7 @@ nav ul li >a {
     form#formPost{
     /* background: white; */
     padding: 2em;
-    width: 90vw;
+    width: 50vw;
     margin: 0 auto;
 }
     form#formPost input[name="name"], form#formPost input[name="clout_points"] {

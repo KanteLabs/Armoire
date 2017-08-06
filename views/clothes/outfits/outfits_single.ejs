@@ -3,7 +3,7 @@
     <h1 class="pageHeader"> <%= data[0].outfitname %> Outfit </h1>
     <h2 class="subHeader">This outfit is worth <%= data[0].clout_points %> Clout Points </h2>
 
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-4" id="clothes_single">
         <div class="thumbnail">
             <% data.map((clothing)=>{ %>
                 <h3> <%= clothing.name %> </h3>
