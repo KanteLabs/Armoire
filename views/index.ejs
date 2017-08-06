@@ -29,7 +29,6 @@
                 <input name="productId" style="display: none" type="text" value="<%= products.id %>" style="display: none">  
                 <input name="brandedName" class="styledInput" type="text" value="<%= products.brandedName %>" style="display: none">  
                 <input name="imageBest" class="styledInput" type="text" value="<%= products.image.sizes.Best.url %>" style="display:none">           
-                <input name="clothing_type" class="styledInput" type="text" value="<%= products.categories[0].shortName %>" style="display: none"> 
 
                 <img class="img-responsive" src="<%= products.image.sizes.Best.url%>" title="<%= products.name %>" alt="<%= products.brandedName %>" / style="display: none">
 
@@ -41,6 +40,7 @@
                     <p><%= products.brandedName %></p><br>
                     <p class="description"><%= products.description.split('<ul>')[0] %></p><br>
                     <p><%= products.priceLabel %></p>
+                    <p><input name="clothing_type" class="styledInput" type="text" value="<%= products.categories[0].shortName %>"> </p>
                     <p><input class="btn btn-primary" type="submit" value="Flex" /></p>
                   </div>
                 </form>
@@ -50,5 +50,35 @@
           </div>
       </ul>
     </div>
-  <%}%>
+  <%} else if(!data){ %>
+    <h1 class="searchResults" style="margin-top: 6em">
+      How to start
+    </h1>
+
+    <div class="col-sm-6 col-md-4" id="clothes_single">
+        <div class="thumbnail">
+            <h3>Quick Guide</h3>
+                <div class="caption">
+                <ol>  
+                  <li> <a href="/auth/register/">Create</a> an account or <a href="/auth/login/">login</a> first. </li>
+                  <li> Search for clothing items that you would like to add to your wardrobe.</li>
+                  <li> Click 'Flex' to save an item to your wardrobe. 
+                      <ul> 
+                          <li> Before saving an item you change its clothing type to 'Tees', 'pants', or 'Sneakers' </li>
+                          <li> This helps makes the process of creating outfits easier </li> 
+                      </ul>
+                  </li>
+                  <li> Under clothes click 'Create An Outfit' to select 1 top, 1 bottom, and 1 shoe to make an outfit
+                      <ul> 
+                          <li> You must also choose a name as well </li>
+                      </ul>
+                  </li>
+                  <li> You can edit the values of a clothing item and create and delete outfits you no longer need </li>
+                  <li> Start flexing and earning some clout </li>
+                </ol>
+                </div>
+        </div>
+    </div>
+
+    <% } %>
 <% include partials/end %>

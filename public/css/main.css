@@ -21,6 +21,24 @@ nav ul li >a {
     background: white;
 }
 
+ol li {
+    list-style-type: decimal;
+    margin: 0 auto;
+    margin-left: 1em;
+}
+
+ol {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+p input[name="clothing_type"] {
+    text-align: center;
+    background: lightgrey;
+    padding: 0em 1em;
+    width: auto;
+}
+
 @media (max-width: 600px){ 
     form#request {
         display: flex;
