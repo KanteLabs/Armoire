@@ -5,7 +5,7 @@
     <ul class="list-group">
     <% for(let i = 0; i <(data.length)/3; i++) { %>
         <li class="list-group-item">
-            <span class="badge"><a href='/clothes/outfits/<%= data[0].outfitid%>/edit'>Edit</a></span>
+            <span class="badge"><a href='/clothes/outfits/<%= data[i].outfitid%>/edit'>Edit</a></span>
             <span class="badge"><a href="/clothes/outfits/<%= data[i].outfitid %>">View</a></span>
             <span class="badge"><%= data[i].clout_points %> clout points</span>
         <p><%= data[i].outfitname %> outfit</p>
