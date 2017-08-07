@@ -5,18 +5,21 @@ Web App that could be utilize as an online wardrobe / closet to help create a vi
 
 ## What is Armoire?
 
-DuckHunt is a simple point and click game that is playable in the browser. The objective of the game is to 
-kill all the ducks on the screen and reach the target score for the difficulty level. 
+This is a work in progress full-stack application that allows for users to create accounts and search for clothing items that they can add to their online wardrobe. This could be a very useful way for fashion forward people to keep a visual collection of items that they own. In addition to filling up a closet with clothing they are able to create outfits out of clothing that they own. This was an idea that I wanted to work on for a long time, and now I look forward to recreating this project again, but instead with a framework like react and possibly a different database.
 
 ## Technical Discussion
 
 Front-end:
-- HTML, CSS
+- HTML, CSS, Bootstrap
 
 Back-end:
 - Node.js, Express, PostgreSQL
 
+
+- This code snippet is how I am able to either return all outfits or return certain outfits that belong to a user.
+
 ```javascript
+
 const Outfits = {
     findAll: (userid)=>{
         return db.query(`
@@ -33,10 +36,14 @@ const Outfits = {
       `, [id])
     }
 }
+
 ```
 
 ## The Making of Armoire
+### Initial Landing page design
 ![landing page](/landingpage.png)
+
+### Initial Outfit page design
 ![outfit image](/outfitpage.png)
 
 ## App Structure
