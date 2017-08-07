@@ -16,7 +16,7 @@ Front-end:
 Back-end:
 - Node.js, Express, PostgreSQL
 
-``
+```javascript
 const Outfits = {
     findAll: (userid)=>{
         return db.query(`
@@ -33,12 +33,11 @@ const Outfits = {
       `, [id])
     }
 }
-
-``
+```
 
 ## The Making of Armoire
-![armoire image](./landingpage.png)
-![armoire image](./outfitpage.png)
+![landing page](/landingpage.png)
+![outfit image](/outfitpage.png)
 
 ## App Structure
 
