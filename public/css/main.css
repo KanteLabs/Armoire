@@ -334,8 +334,8 @@ p input[name="clothing_type"] {
 }
  } 
 @media(min-width: 601px){
-    .col-sm-6.col-md-4 {
-        width: 45%;
+    .col-sm-6.col-md-4 { 
+        width: 25%;
         height: 550px;
         margin: 0 auto;
         margin-bottom: 4em;
