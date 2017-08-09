@@ -27,7 +27,7 @@ Front-end:
 Back-end:
 - Node.js, Express, PostgreSQL
 
-
+###
 - This code snippet is how I am able to either return all outfits or return certain outfits that belong to a user.
 
 ```javascript
@@ -56,4 +56,8 @@ A lot of focus was placed on having a working CRUD functionality over design and
 ## App Structure
 
 
-## Opportunities for Future Growth
+## Opportunities for Future Growth 
+- Better UI/UX design and making the app more straight forward for all users.
+- Usage of possible multiple APIs or a different API because ShopStyle Api is limited and sometimes require specific queries
+- Fix up the website design
+- Possible usage of a different database or restructure how the database is setup and how the queries are returned
