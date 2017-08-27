@@ -1,6 +1,8 @@
 # Armoire Online Closet 💃🏾
 Web App that could be utilize as an online wardrobe / closet to help create a visual representation of a person's clothing collection
-
+Test Account details: 
+Username is clout
+Password is clout
 ![armoire image](./public/splashimage.png)
 
 
