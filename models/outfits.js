@@ -15,11 +15,13 @@ const Outfits = {
         select o.*,c.* , o.name as outfitName, o.id as outfitId  from clothes c inner join outfits o on c.id = o.shoe_id WHERE o.id = $1
       `, [id])
     },
-    findByClothing_type: (clothing_type)=>{
+    findByClothing_type: (clothing_type, userid)=>{
         return db.oneOrNone(`
           SELECT * FROM clothes
-          WHERE clothing_type = $1
-        `,[clothing_type])
+          WHERE clothing_type = $1 
+          AND
+          WHERE userid = $2
+        `,[clothing_type, userid])
     },
     create: (outfit, userid)=>{
       return db.one(`
