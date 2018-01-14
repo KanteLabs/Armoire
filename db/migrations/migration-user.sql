@@ -1,4 +1,4 @@
--- \c armoire
+\c armoire
 
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,

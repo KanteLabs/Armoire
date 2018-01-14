@@ -1,4 +1,4 @@
--- \c armoire
+\c armoire
 
 CREATE TABLE IF NOT EXISTS outfits (
   id SERIAL PRIMARY KEY,
